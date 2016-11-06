@@ -1,4 +1,4 @@
-const hopar= function(a){
+const completed= function(a){
   if (a)
     return "checked";
   return "";
@@ -14,7 +14,7 @@ $.ajax({
     $("#list").empty();
     let array = JSON.parse(result);
     for (let i=0; i<=array.length-1; i++){
-      let element = '<li id='+array[i].id+'><span>'+array[i].todo+'</span><input type="checkbox" onclick="checkboxClick('+array[i].id+')" '+hopar(array[i].checked)+' style="margin-left: 5px; onclick="checkboxClick('+array[i].id+')""/><button onclick="deleteTodo('+array[i].id+')" style="margin-left: 5px;" id="delete">Delete</button></li>';
+      let element = '<li id='+array[i].id+'><span>'+array[i].todo+'</span><input type="checkbox" onclick="checkboxClick('+array[i].id+')" '+completed(array[i].checked)+' style="margin-left: 5px; onclick="checkboxClick('+array[i].id+')""/><button onclick="deleteTodo('+array[i].id+')" style="margin-left: 5px;" id="delete">Delete</button></li>';
       $("#list").append(element);
     }
   }
@@ -27,7 +27,7 @@ success: function(result){
 $("#list").empty();
   let array = JSON.parse(result);
   for (let i=0; i<=array.length-1; i++){
-    let element = '<li id='+array[i].id+'><span>'+array[i].todo+'</span><input type="checkbox" onclick="checkboxClick('+array[i].id+')" '+hopar(array[i].checked)+' style="margin-left: 5px;"/><button onclick="deleteTodo('+array[i].id+')" style="margin-left: 5px;" id="delete">Delete</button></li>';
+    let element = '<li id='+array[i].id+'><span>'+array[i].todo+'</span><input type="checkbox" onclick="checkboxClick('+array[i].id+')" '+completed(array[i].checked)+' style="margin-left: 5px;"/><button onclick="deleteTodo('+array[i].id+')" style="margin-left: 5px;" id="delete">Delete</button></li>';
     $("#list").append(element);
   }
 }
@@ -43,7 +43,7 @@ let checkboxClick =  function(id){
       $("#list").empty();
       let array = JSON.parse(result);
       for (let i=0; i<=array.length-1; i++){
-        let element = '<li id='+array[i].id+'><span>'+array[i].todo+'</span><input type="checkbox" onclick="checkboxClick('+array[i].id+')" '+hopar(array[i].checked)+' style="margin-left: 5px; onclick="checkboxClick('+array[i].id+')""/><button onclick="deleteTodo('+array[i].id+')" style="margin-left: 5px;" id="delete">Delete</button></li>';
+        let element = '<li id='+array[i].id+'><span>'+array[i].todo+'</span><input type="checkbox" onclick="checkboxClick('+array[i].id+')" '+completed(array[i].checked)+' style="margin-left: 5px; onclick="checkboxClick('+array[i].id+')""/><button onclick="deleteTodo('+array[i].id+')" style="margin-left: 5px;" id="delete">Delete</button></li>';
         $("#list").append(element);
       }
     }
@@ -59,7 +59,7 @@ let deleteTodo = function(id){
       $("#list").empty();
       let array = JSON.parse(result);
       for (let i=0; i<=array.length-1; i++){
-        let element = '<li id='+array[i].id+'><span>'+array[i].todo+'</span><input type="checkbox" onclick="checkboxClick('+array[i].id+')" '+hopar(array[i].checked)+' style="margin-left: 5px;"/><button onclick="deleteTodo('+array[i].id+')" style="margin-left: 5px;" id="delete">Delete</button></li>';
+        let element = '<li id='+array[i].id+'><span>'+array[i].todo+'</span><input type="checkbox" onclick="checkboxClick('+array[i].id+')" '+completed(array[i].checked)+' style="margin-left: 5px;"/><button onclick="deleteTodo('+array[i].id+')" style="margin-left: 5px;" id="delete">Delete</button></li>';
         $("#list").append(element);
       }
     }
@@ -73,7 +73,7 @@ success: function(result){
 //  $("#list").empty();
   let array = JSON.parse(result);
   for (let i=0; i<=array.length-1; i++){
-    let element = '<li id='+array[i].id+'><span>'+array[i].todo+'</span><input type="checkbox" onclick="checkboxClick('+array[i].id+')" '+hopar(array[i].checked)+' style="margin-left: 5px;"/><button onclick="deleteTodo('+array[i].id+')" style="margin-left: 5px;" id="delete">Delete</button></li>';
+    let element = '<li id='+array[i].id+'><span>'+array[i].todo+'</span><input type="checkbox" onclick="checkboxClick('+array[i].id+')" '+completed(array[i].checked)+' style="margin-left: 5px;"/><button onclick="deleteTodo('+array[i].id+')" style="margin-left: 5px;" id="delete">Delete</button></li>';
     $("#list").append(element);
   }
 }
@@ -89,7 +89,7 @@ $("#submitButton").on("click", function(){
       $("#list").empty();
       let array = JSON.parse(result);
       for (let i=0; i<=array.length-1; i++){
-        let element = '<li id='+array[i].id+'><span>'+array[i].todo+'</span><input type="checkbox" onclick="checkboxClick('+array[i].id+')" '+hopar(array[i].checked)+' style="margin-left: 5px;"/><button onclick="deleteTodo('+array[i].id+')" style="margin-left: 5px;" id="delete">Delete</button></li>';
+        let element = '<li id='+array[i].id+'><span>'+array[i].todo+'</span><input type="checkbox" onclick="checkboxClick('+array[i].id+')" '+completed(array[i].checked)+' style="margin-left: 5px;"/><button onclick="deleteTodo('+array[i].id+')" style="margin-left: 5px;" id="delete">Delete</button></li>';
         $("#list").append(element);
       }
     }
